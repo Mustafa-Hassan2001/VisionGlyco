@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "model_file": "visionglyco.tflite",
+  "task": "classify",
+  "backbone": "efficientnet_b0",
+  "input": {
+    "size": 320,
+    "crop_fraction": 0.8,
+    "channels": "RGB",
+    "dtype": "float32",
+    "range": [
+      0,
+      255
+    ],
+    "polar": {
+      "height": 201,
+      "width": 720,
+      "pupil_min": 0.15,
+      "pupil_max": 0.7,
+      "pupil_default": 0.35
+    }
+  },
+  "output": {
+    "type": "probability",
+    "threshold": 0.5,
+    "positive_label": "Diabetic iris pattern",
+    "negative_label": "No diabetic pattern",
+    "target_column": "diabetes",
+    "target_threshold": 1
+  },
+  "test_metrics": {
+    "n": 196,
+    "n_positive": 88,
+    "threshold": 0.5,
+    "accuracy": 0.9091836734693878,
+    "accuracy_ci95": null,
+    "balanced_accuracy": 0.9068602693602692,
+    "auc": 0.9512836700336701,
+    "sensitivity": 0.884090909090909,
+    "specificity": 0.9296296296296296,
+    "majority_baseline_accuracy": 0.5510204081632653
+  },
+  "evaluation": "5x repeated stratified 5-fold cross-validation: each of the 196 people was tested by a model that never saw them.",
+  "target_accuracy": 0.85,
+  "meets_target": true,
+  "dataset": {
+    "train": {
+      "images": 196,
+      "patients": 196
+    },
+    "val": {
+      "images": 0,
+      "patients": 0
+    },
+    "test": {
+      "images": 196,
+      "patients": 196
+    }
+  },
+  "source": {
+    "name": "Farabi Hospital iris dataset (public research data)",
+    "citation": "P. Moradi, N. Nazer, A. Khasahmadi, H. Mohammadzadeh, H. Khojasteh Jafari. Discovering Informative Regions in Iris Images to Predict Diabetes. ICBME 2018.",
+    "url": "https://github.com/NaghmeNazer/diabetes-iridology"
+  },
+  "synthetic_data": false,
+  "clinically_validated": false,
+  "tflite_max_abs_diff": 0.01791246235370636,
+  "trained_at": "2026-10-07T21:05:47+00:00",
+  "exported_at": "2026-10-07T21:42:16+00:00"
+}

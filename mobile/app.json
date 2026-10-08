@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "VisionGlyco",
+    "slug": "visionglyco",
+    "scheme": "visionglyco",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.visionglyco.app"
+    },
+    "android": {
+      "package": "com.visionglyco.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFFFF",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "VisionGlyco uses the camera to photograph your eye for on-device analysis.",
+          "microphonePermission": false,
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "VisionGlyco can analyse an eye photo you choose from your library.",
+          "cameraPermission": false,
+          "microphonePermission": false
+        }
+      ],
+      "react-native-fast-tflite",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 220,
+          "resizeMode": "contain",
+          "backgroundColor": "#FFFFFF"
+        }
+      ]
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+tensorflow>=2.18,<2.22
+numpy>=1.26
+pandas>=2.2
+pillow>=10.0
+scikit-learn>=1.5
+pytest>=8.0

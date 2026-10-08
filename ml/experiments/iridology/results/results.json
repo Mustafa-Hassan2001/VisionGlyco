@@ -1,0 +1,85 @@
+{
+  "dataset": {
+    "source": "https://github.com/NaghmeNazer/diabetes-iridology",
+    "split": "Data/personBase",
+    "people": 196,
+    "diabetic": 88,
+    "control": 108,
+    "image_shape": [
+      201,
+      720,
+      3
+    ]
+  },
+  "evaluation": "5x repeated stratified 5-fold cross-validation",
+  "majority_baseline_accuracy": 0.5510204081632653,
+  "results": {
+    "efficientnet_b0": {
+      "description": "EfficientNet-B0 features + logistic regression",
+      "accuracy": {
+        "mean": 0.9091836734693878,
+        "std": 0.019733754699809904,
+        "min": 0.8724489795918368,
+        "max": 0.9285714285714286
+      },
+      "balanced_accuracy": {
+        "mean": 0.9068602693602692,
+        "std": 0.01944180240624686,
+        "min": 0.8705808080808081,
+        "max": 0.9257154882154882
+      },
+      "auc": {
+        "mean": 0.9512836700336701,
+        "std": 0.005404194460604451,
+        "min": 0.9416035353535355,
+        "max": 0.9582281144781145
+      },
+      "sensitivity": {
+        "mean": 0.884090909090909,
+        "std": 0.016701066428067107,
+        "min": 0.8522727272727273,
+        "max": 0.8977272727272727
+      },
+      "specificity": {
+        "mean": 0.9296296296296296,
+        "std": 0.02237601106221219,
+        "min": 0.8888888888888888,
+        "max": 0.9537037037037037
+      }
+    },
+    "efficientnet_b0_normalised": {
+      "description": "Same, colour/brightness normalised per image",
+      "accuracy": {
+        "mean": 0.926530612244898,
+        "std": 0.010505745041823477,
+        "min": 0.9132653061224489,
+        "max": 0.9438775510204082
+      },
+      "balanced_accuracy": {
+        "mean": 0.9251262626262626,
+        "std": 0.011034965077517757,
+        "min": 0.9118265993265993,
+        "max": 0.9438131313131313
+      },
+      "auc": {
+        "mean": 0.9490109427609428,
+        "std": 0.006869622943246298,
+        "min": 0.9402356902356902,
+        "max": 0.9574915824915825
+      },
+      "sensitivity": {
+        "mean": 0.9113636363636364,
+        "std": 0.018181818181818205,
+        "min": 0.8977272727272727,
+        "max": 0.9431818181818182
+      },
+      "specificity": {
+        "mean": 0.9388888888888889,
+        "std": 0.009442628728875522,
+        "min": 0.9259259259259259,
+        "max": 0.9537037037037037
+      }
+    }
+  },
+  "run_at": "2026-10-07T21:05:47+00:00"
+}
